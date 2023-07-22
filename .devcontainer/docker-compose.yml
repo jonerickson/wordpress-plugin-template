@@ -1,0 +1,29 @@
+services:
+  app:
+    image: wordpress-codespace:8.1-apache-bullseye
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+  database:
+    image: mariadb:10.4
+    volumes:
+      - database:/var/lib/mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+  phpmyadmin:
+    image: phpmyadmin
+    depends_on:
+      - database
+    ports:
+      - 81:80
+    environment:
+      PMA_HOST: database
+volumes:
+  database:

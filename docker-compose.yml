@@ -4,8 +4,10 @@ services:
     ports:
       - '80:80'
     volumes:
-      - 'wordpress:/var/www/html'
-      - '.:/var/www/html/wp-content/plugins/yourplugin'
+      - './wordpress:/var/www/html'
+      - './yourplugin.php:/var/www/html/wp-content/plugins/yourplugin/yourplugin.php'
+      - './src:/var/www/html/wp-content/plugins/yourplugin/src'
+      - './vendor:/var/www/html/wp-content/plugins/yourplugin/vendor'
       - './nginx/conf.d/site.conf:/etc/nginx/conf.d/site.conf'
     networks:
       - wordpress
@@ -21,10 +23,10 @@ services:
       - wordpress
     restart: unless-stopped
     environment:
-      - MYSQL_DATABASE=wordpress
-      - MYSQL_USER=wordpress
-      - MYSQL_PASSWORD=wordpress
-      - MYSQL_ROOT_PASSWORD=wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: wordpress
     ports:
       - '3306:3306'
   wordpress:
@@ -35,17 +37,22 @@ services:
     depends_on:
       - mysql
     volumes:
-      - 'wordpress:/var/www/html'
-      - '.:/var/www/html/wp-content/plugins/yourplugin'
+      - './wordpress:/var/www/html'
+      - './yourplugin.php:/var/www/html/wp-content/plugins/yourplugin/yourplugin.php'
+      - './src:/var/www/html/wp-content/plugins/yourplugin/src'
+      - './vendor:/var/www/html/wp-content/plugins/yourplugin/vendor'
+      - './php/conf.d/php.ini:/usr/local/etc/php/conf.d/php.ini'
     networks:
       - wordpress
     restart: unless-stopped
     environment:
-      - WORDPRESS_DB_HOST=mysql
-      - WORDPRESS_DB_NAME=wordpress
-      - WORDPRESS_DB_PASSWORD=wordpress
-      - WORDPRESS_DB_USER=wordpress
-      - WORDPRESS_DEBUG=true
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DEBUG: true
+      WP_DEBUG: true
+      WP_DEBUG_DISPLAY: true
   cli:
     image: wordpress-laravel:cli-php8.1
     build:
@@ -58,18 +65,21 @@ services:
     networks:
       - wordpress
     volumes:
-      - 'wordpress:/var/www/html'
-      - '.:/var/www/html/wp-content/plugins/yourplugin'
+      - './wordpress:/var/www/html'
+      - './yourplugin.php:/var/www/html/wp-content/plugins/yourplugin/yourplugin.php'
+      - './src:/var/www/html/wp-content/plugins/yourplugin/src'
+      - './vendor:/var/www/html/wp-content/plugins/yourplugin/vendor'
     environment:
-      - WORDPRESS_DB_HOST=mysql
-      - WORDPRESS_DB_NAME=wordpress
-      - WORDPRESS_DB_PASSWORD=wordpress
-      - WORDPRESS_DB_USER=wordpress
-      - WORDPRESS_DEBUG=true
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DEBUG: true
+      WP_DEBUG: true
+      WP_DEBUG_DISPLAY: true
 networks:
   wordpress:
     driver: bridge
 volumes:
   mysql:
     driver: local
-  wordpress: {}

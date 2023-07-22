@@ -1,18 +1,24 @@
 # Wordpress Plugin Template (Laravel)
 
-The following Wordpress plugin template utilizes the [Acorns](https://github.com/roots/acorn) library to provide a Laravel-like developer experience.
+The following Wordpress plugin template utilizes the [Roots Acorns](https://github.com/roots/acorn) library to provide a Laravel-like framework for developing a Wordpress plugin.
 
-Before you start, you should search the project and replace every instance of `yourplugin` with your designed plugin name. This includes `yourplugin.php` located in the root folder.
+## Quickstart
 
-## Starting Wordpress
+Launch a new Github Codespace to start creating a Wordpress plugin.
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/DeschutesDesignGroupLLC/wordpress-plugin-template)
+
+## Starting A Local Wordpress Docker Development Environment
 
 Start and initialize the Docker containers.
 
 `docker-compose up --build`
 
-## Installing Wordpress
+### Installing Wordpress
 
 Run the bash script that will automatically install Wordpress and activate the plugin.
+
+You may configure the WP-CLI script in `docker/cli/install-wordpress` for additional configuration and setup steps.
 
 `docker-compose run --rm cli install-wordpress`
 
@@ -20,27 +26,23 @@ Run the bash script that will automatically install Wordpress and activate the p
 Username: wordpress<br>
 Password: wordpress
 
-## Starting Development Server
+### Starting The Development Server
 
-Compile and run the Vite development server. Vite will utilize hot reloading to show you the latest updates when a file is saved.
+Compile and run the Webpack development server. Webpack will utilize hot reloading to show you the latest updates when a file is saved.
 
 `npm run dev`
 
-## Building For Production
+### Building For Production
 
 Compile your assets for production.
 
 `npm run build`
 
-Package the plugin.
+### Accessing Wordpress
 
-`npm run plugin-zip`
+Nginx is configured to listen to any server name. You can customize a default server name by editing the `nginx/conf.d/site.conf` configuration file.
 
-## Accessing Wordpress
-
-Be default, the Wordpress installation will be available at `http://lvh.me`. For Mac users, this automatically defaults to localhost. For Windows or Linux users, you may need to edit your `/etc/hosts` file or change the server name in the Nginx configuration located at `nginx/conf.d/site.conf`.
-
-The plugin can be accessed at `http://lvh.me/hello-world`
+The plugin can be accessed at `http://localhost/hello-world`
 
 ## CLI
 
@@ -51,5 +53,7 @@ The WP-CLI can be accessed using the following commands:
 `docker-compose run --rm cli wp [command]`
 
 #### Laravel Artisan
+
+Acorns comes with several Laravel Artisan commands. A current list can be found [here](https://roots.io/acorn/docs/wp-cli/).
 
 `docker-compose run --rm cli wp acorn [artisan:command]`

@@ -4,8 +4,10 @@
   "description": "A starter project for creating a Wordpress plugin.",
   "keywords": [
     "wordpress",
+    "template",
     "plugin"
   ],
+  "type": "module",
   "homepage": "https://www.deschutesdesigngroup.com",
   "license": "MIT",
   "author": {
@@ -14,37 +16,24 @@
     "url": "https://www.deschutesdesigngroup.com"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "check-engines": "wp-scripts check-engines",
-    "check-licenses": "wp-scripts check-licenses",
-    "format": "wp-scripts format",
-    "lint:css": "wp-scripts lint-style",
-    "lint:js": "wp-scripts lint-js",
-    "lint:md:docs": "wp-scripts lint-md-docs",
-    "lint:pkg-json": "wp-scripts lint-pkg-json",
-    "packages-update": "wp-scripts packages-update",
-    "plugin-zip": "wp-scripts plugin-zip",
-    "test:e2e": "wp-scripts test-e2e",
-    "test:unit": "wp-scripts test-unit-js"
+    "dev": "bud development",
+    "build": "bud build"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^26.9.0",
-    "autoprefixer": "^10.4.14",
-    "laravel-vite-plugin": "^0.7.8",
-    "postcss": "^8.4.27",
-    "tailwindcss": "^3.3.3",
-    "vite": "^4.4.6"
+    "@roots/bud": "^6.14.3",
+    "@roots/bud-eslint": "^6.14.3",
+    "@roots/bud-prettier": "^6.14.3",
+    "@roots/bud-tailwindcss": "^6.14.3",
+    "@roots/eslint-config": "^6.14.3",
+    "tailwindcss": "^3.3.3"
   },
   "files": [
-    "app",
-    "config",
-    "database",
-    "public",
-    "resources",
-    "routes",
-    "storage",
+    "yourplugin.php",
+    "src",
     "vendor",
-    "yourplugin.php"
+    "composer.json",
+    "composer.lock",
+    "package.json",
+    "yarn.lock"
   ]
 }
