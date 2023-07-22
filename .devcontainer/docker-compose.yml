@@ -1,4 +1,10 @@
 services:
+  app:
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+    networks:
+      - wordpress
   nginx:
     image: nginx:alpine
     ports:
