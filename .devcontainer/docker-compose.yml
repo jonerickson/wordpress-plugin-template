@@ -7,26 +7,23 @@ services:
     volumes:
       - ..:/workspace:cached
     command: sleep infinity
-  mysql:
-    image: mysql:8
-    command: '--default-authentication-plugin=mysql_native_password'
+  database:
+    image: mariadb:10.4
     volumes:
-      - mysql:/var/lib/mysql
+      - dbdata:/var/lib/mysql
     restart: unless-stopped
     environment:
-      - MYSQL_DATABASE=wordpress
-      - MYSQL_USER=wordpress
-      - MYSQL_PASSWORD=wordpress
-      - MYSQL_ROOT_PASSWORD=wordpress
-    ports:
-      - '3306:3306'
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
   phpmyadmin:
     image: phpmyadmin
     depends_on:
-      - mysql
+      - database
     ports:
       - 81:80
     environment:
-      PMA_HOST: mysql
+      PMA_HOST: database
 volumes:
-  mysql:
+  dbdata:
