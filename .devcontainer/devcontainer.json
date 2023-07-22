@@ -1,7 +1,7 @@
 {
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/workspace/${localWorkspaceFolderBasename}",
+  "workspaceFolder": "/workspace",
   "hostRequirements": {
     "storage": "64gb"
   }

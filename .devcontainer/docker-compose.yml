@@ -2,6 +2,7 @@ services:
   app:
     image: mcr.microsoft.com/devcontainers/universal:linux
     volumes:
+      - 'wordpress:/var/www/html:cached'
       - ..:/workspace:cached
     command: sleep infinity
     networks:
