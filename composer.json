@@ -1,0 +1,23 @@
+{
+    "require": {
+        "php": "^8.1",
+        "roots/acorn": "^3.2"
+    },
+    "require-dev": {
+        "spatie/laravel-ignition": "^1.6",
+        "laravel/pint": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "post-autoload-dump": [
+        "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+    ]
+}

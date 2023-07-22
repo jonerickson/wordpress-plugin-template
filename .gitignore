@@ -1,0 +1,11 @@
+# IntelliJ Project Files
+.idea
+*.iml
+out
+gen
+_config.yml
+
+# Dependencies
+vendor
+node_modules
+.env

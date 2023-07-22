@@ -1,0 +1,10 @@
+{
+  "preset": "laravel",
+  "excludes": [
+    "docker",
+    "nginx",
+    "node_modules",
+    "public",
+    "vendor"
+  ]
+}

@@ -1,0 +1,1 @@
+FROM wordpress:cli-php8.1
