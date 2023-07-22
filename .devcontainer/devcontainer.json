@@ -1,8 +1,26 @@
 {
+  "name": "Wordpress Plugin Template",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspace",
   "hostRequirements": {
     "storage": "64gb"
-  }
+  },
+  "forwardPorts": [
+    80,
+    81,
+    3306
+  ],
+  "portsAttributes": {
+    "3306": {
+      "label": "Database"
+    },
+    "80": {
+      "label": "WordPress"
+    },
+    "81": {
+      "label": "phpMyAdmin"
+    }
+  },
+  "postStartCommand": "service apache2 start"
 }
