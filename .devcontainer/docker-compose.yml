@@ -30,7 +30,7 @@ services:
   wordpress:
     image: wordpress-laravel:php8.1-fpm
     build:
-      context: ../docker/wordpress
+      context: ./docker/wordpress
       dockerfile: Dockerfile
     depends_on:
       - mysql
@@ -49,7 +49,7 @@ services:
   cli:
     image: wordpress-laravel:cli-php8.1
     build:
-      context: ../docker/cli
+      context: ./docker/cli
       dockerfile: Dockerfile
     depends_on:
       - wordpress
