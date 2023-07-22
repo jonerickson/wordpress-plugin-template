@@ -1,5 +1,6 @@
 services:
   app:
+    image: mcr.microsoft.com/devcontainers/universal:linux
     volumes:
       - ..:/workspace:cached
     command: sleep infinity
