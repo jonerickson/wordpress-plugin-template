@@ -3,9 +3,6 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspace",
-  "hostRequirements": {
-    "storage": "64gb"
-  },
   "forwardPorts": [
     80,
     81,
