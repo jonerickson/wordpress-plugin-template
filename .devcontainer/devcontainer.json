@@ -1,5 +1,5 @@
 {
   "dockerComposeFile": "docker-compose.yml",
-  "service": "devcontainer",
+  "service": "wordpress",
   "workspaceFolder": "/var/www/html/${localWorkspaceFolderBasename}"
 }
