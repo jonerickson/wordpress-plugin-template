@@ -17,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('hello-world', [PluginController::class, 'index']);
 
 Route::get('model', function () {
-    \App\Models\PluginModel::all();
+    dd(\App\Models\PluginModel::all());
 });
