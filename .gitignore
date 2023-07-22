@@ -8,4 +8,8 @@ _config.yml
 # Dependencies
 vendor
 node_modules
+
+# Builds
+*.zip
+
 .env
