@@ -5,7 +5,7 @@ services:
       - '80:80'
     volumes:
       - 'wordpress:/var/www/html'
-      - '.:/var/www/html/wp-content/plugins/yourplugin'
+      - './src:/var/www/html/wp-content/plugins/yourplugin'
       - './nginx/conf.d/site.conf:/etc/nginx/conf.d/site.conf'
     networks:
       - wordpress
@@ -36,7 +36,7 @@ services:
       - mysql
     volumes:
       - 'wordpress:/var/www/html'
-      - '.:/var/www/html/wp-content/plugins/yourplugin'
+      - './src:/var/www/html/wp-content/plugins/yourplugin'
     networks:
       - wordpress
     restart: unless-stopped
@@ -59,7 +59,7 @@ services:
       - wordpress
     volumes:
       - 'wordpress:/var/www/html'
-      - '.:/var/www/html/wp-content/plugins/yourplugin'
+      - './src:/var/www/html/wp-content/plugins/yourplugin'
     environment:
       - WORDPRESS_DB_HOST=mysql
       - WORDPRESS_DB_NAME=wordpress

@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\PluginController;
 use Illuminate\Support\Facades\Route;
+use WordpressPluginTemplate\App\Http\Controllers\PluginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('hello-world', [PluginController::class, 'index']);
 
 Route::get('model', function () {
-    dd(\App\Models\PluginModel::all());
+    dd(\WordpressPluginTemplate\App\Models\PluginModel::all());
 });

@@ -6,7 +6,7 @@
 
     <title>{{ config('app.name') }}</title>
 
-    @vite('resources/js/app.js')
+    @vite('src/resources/js/app.js')
 </head>
     <body class="flex h-full flex-col">
         @yield('content')
