@@ -2,8 +2,6 @@
 
 The following Wordpress plugin template utilizes the [Acorns](https://github.com/roots/acorn) library to provide a Laravel-like developer experience.
 
-Before you start, you should search the project and replace every instance of `yourplugin` with your designed plugin name. This includes `yourplugin.php` located in the root folder.
-
 ## Starting Wordpress
 
 Start and initialize the Docker containers.
