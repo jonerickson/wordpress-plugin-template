@@ -8,10 +8,15 @@ _config.yml
 # Dependencies
 vendor
 node_modules
+wordpress
 
 # Builds
 *.zip
 
-# Laravel
+# Other
 .env
 *.cache
+*.log
+
+# Laravel
+src/public

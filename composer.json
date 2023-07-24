@@ -5,18 +5,19 @@
     },
     "require-dev": {
         "spatie/laravel-ignition": "^1.6",
+        "laravel/pint": "^v1.10.5",
         "fzaninotto/faker": "^1.5"
     },
     "autoload": {
         "psr-4": {
-            "WordpressPluginTemplate\\App\\": "yourplugin/app",
-            "WordpressPluginTemplate\\Database\\Factories\\": "yourplugin/app/database/factories/",
-            "WordpressPluginTemplate\\Database\\Seeders\\": "yourplugin/app/database/seeders/"
+            "WordpressPluginTemplate\\App\\": "src/app",
+            "WordpressPluginTemplate\\Database\\Factories\\": "src/database/factories/",
+            "WordpressPluginTemplate\\Database\\Seeders\\": "src/database/seeders/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "yourplugin/app/tests/"
+            "Tests\\": "src/tests/"
         }
     },
     "post-autoload-dump": [

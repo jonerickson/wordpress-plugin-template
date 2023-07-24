@@ -6,9 +6,10 @@
 
     <title>{{ config('app.name') }}</title>
 
-    @vite('src/resources/js/app.js')
+    <link href="{{ asset('app.css') }}" rel="stylesheet">
 </head>
     <body class="flex h-full flex-col">
         @yield('content')
+        <script src="{{ asset('app.js') }}"></script>
     </body>
 </html>

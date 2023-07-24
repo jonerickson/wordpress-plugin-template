@@ -16,6 +16,12 @@ wp core install --url=https://$(CODESPACE_NAME) --title="Wordpress Plugin Templa
 wp plugin delete akismet
 wp plugin install show-current-template --activate
 
+# Symlink Plugin and Activate
+cd /workspace/wordpress/wp-content/plugins
+ln -s /workspace/src yourplugin
+cd /workspace/wordpress
+wp plugin activate yourplugin
+
 # Import Demo Content
 wp plugin install wordpress-importer --activate
 curl https://raw.githubusercontent.com/WPTT/theme-unit-test/master/themeunittestdata.wordpress.xml > demo-content.xml
@@ -25,13 +31,10 @@ rm demo-content.xml
 # Xdebug
 echo xdebug.log_level=0 | sudo tee -a /usr/local/etc/php/conf.d/xdebug.ini
 
-# Symlink Plugin and Activate
-cd /workspace/wordpress/wp-content/plugins
-ln -s /workspace/src yourplugin
-cd /workspace/wordpress
-wp plugin activate yourplugin
-
 # Install Dependencies
 cd /workspace
-npm install
+yarn install
 composer install
+
+# Build App
+npm run build
