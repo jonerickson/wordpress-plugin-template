@@ -4,6 +4,7 @@
   "description": "A starter project for creating a Wordpress plugin.",
   "keywords": [
     "wordpress",
+    "template",
     "plugin"
   ],
   "type": "module",
@@ -16,18 +17,7 @@
   },
   "scripts": {
     "dev": "bud development",
-    "build": "bud build",
-    "check-engines": "wp-scripts check-engines",
-    "check-licenses": "wp-scripts check-licenses",
-    "format": "wp-scripts format",
-    "lint:css": "wp-scripts lint-style",
-    "lint:js": "wp-scripts lint-js",
-    "lint:md:docs": "wp-scripts lint-md-docs",
-    "lint:pkg-json": "wp-scripts lint-pkg-json",
-    "packages-update": "wp-scripts packages-update",
-    "plugin-zip": "wp-scripts plugin-zip",
-    "test:e2e": "wp-scripts test-e2e",
-    "test:unit": "wp-scripts test-unit-js"
+    "build": "bud build"
   },
   "devDependencies": {
     "@roots/bud": "^6.14.3",
@@ -38,14 +28,6 @@
     "tailwindcss": "^3.3.3"
   },
   "files": [
-    "app",
-    "config",
-    "database",
-    "public",
-    "resources",
-    "routes",
-    "storage",
-    "vendor",
-    "yourplugin.php"
+    "src"
   ]
 }
