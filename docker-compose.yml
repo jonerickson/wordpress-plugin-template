@@ -4,7 +4,7 @@ services:
     ports:
       - '80:80'
     volumes:
-      - 'wordpress:/var/www/html'
+      - './wordpress:/var/www/html'
       - './src:/var/www/html/wp-content/plugins/yourplugin'
       - './nginx/conf.d/site.conf:/etc/nginx/conf.d/site.conf'
     networks:
@@ -21,10 +21,10 @@ services:
       - wordpress
     restart: unless-stopped
     environment:
-      - MYSQL_DATABASE=wordpress
-      - MYSQL_USER=wordpress
-      - MYSQL_PASSWORD=wordpress
-      - MYSQL_ROOT_PASSWORD=wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: wordpress
     ports:
       - '3306:3306'
   wordpress:
@@ -35,17 +35,20 @@ services:
     depends_on:
       - mysql
     volumes:
-      - 'wordpress:/var/www/html'
+      - './wordpress:/var/www/html'
       - './src:/var/www/html/wp-content/plugins/yourplugin'
+      - './php/conf.d/php.ini:/usr/local/etc/php/conf.d/php.ini'
     networks:
       - wordpress
     restart: unless-stopped
     environment:
-      - WORDPRESS_DB_HOST=mysql
-      - WORDPRESS_DB_NAME=wordpress
-      - WORDPRESS_DB_PASSWORD=wordpress
-      - WORDPRESS_DB_USER=wordpress
-      - WORDPRESS_DEBUG=true
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DEBUG: true
+      WP_DEBUG: true
+      WP_DEBUG_DISPLAY: true
   cli:
     image: wordpress-laravel:cli-php8.1
     build:
@@ -58,18 +61,19 @@ services:
     networks:
       - wordpress
     volumes:
-      - 'wordpress:/var/www/html'
+      - './wordpress:/var/www/html'
       - './src:/var/www/html/wp-content/plugins/yourplugin'
     environment:
-      - WORDPRESS_DB_HOST=mysql
-      - WORDPRESS_DB_NAME=wordpress
-      - WORDPRESS_DB_PASSWORD=wordpress
-      - WORDPRESS_DB_USER=wordpress
-      - WORDPRESS_DEBUG=true
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DEBUG: true
+      WP_DEBUG: true
+      WP_DEBUG_DISPLAY: true
 networks:
   wordpress:
     driver: bridge
 volumes:
   mysql:
     driver: local
-  wordpress: {}

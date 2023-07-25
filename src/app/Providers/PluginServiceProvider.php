@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace WordpressPluginTemplate\App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -8,13 +8,8 @@ class PluginServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->setupMigrations();
+        dd('test');
         $this->registerShortcode();
-    }
-
-    public function setupMigrations()
-    {
-
     }
 
     public function registerShortcode()

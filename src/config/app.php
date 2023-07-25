@@ -192,7 +192,7 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\PluginServiceProvider::class,
+        WordpressPluginTemplate\App\Providers\PluginServiceProvider::class,
     ],
 
     /*

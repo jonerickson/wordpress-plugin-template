@@ -24,6 +24,6 @@
       "label": "phpMyAdmin"
     }
   },
-  "postCreateCommand": "./.devcontainer/setup.sh > .devcontainer/setup.log && code - r yourplugin.php",
+  "postCreateCommand": "./.devcontainer/setup.sh > .devcontainer/setup.log",
   "postStartCommand": "service apache2 start"
 }
