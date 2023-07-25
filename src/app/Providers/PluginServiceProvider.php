@@ -8,7 +8,6 @@ class PluginServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        dd('test');
         $this->registerShortcode();
     }
 
