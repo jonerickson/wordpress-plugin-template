@@ -19,8 +19,11 @@ wp plugin delete akismet
 wp plugin install show-current-template --activate
 
 # Symlink Plugin and Activate
-cd /workspace/wordpress/wp-content/plugins
-ln -s /workspace/src yourplugin
+mkdir -p "/workspace/wordpress/wp-content/plugins/yourplugin"
+cd /workspace/wordpress/wp-content/plugins/yourplugin
+ln -s /workspace/src
+ln -s /workspace/vendor
+ln -s /workspace/yourplugin.php
 cd /workspace/wordpress
 wp plugin activate yourplugin
 
