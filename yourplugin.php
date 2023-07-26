@@ -13,7 +13,7 @@ use Roots\Acorn\Bootloader;
  * Set constants
  */
 \define('WP_ENV', 'local');
-\define('ACORN_BASEPATH', rtrim(plugin_dir_path(__FILE__).'/src', '/'));
+\define('ACORN_BASEPATH', rtrim(plugin_dir_path(__FILE__).'src', '/'));
 
 /**
  * Experimental features

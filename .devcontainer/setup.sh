@@ -14,6 +14,9 @@ LINE_NUMBER=`grep -n -o 'stop editing!' wp-config.php | cut -d ':' -f 1`
 sed -i "${LINE_NUMBER}r ../.devcontainer/wp-config.txt" wp-config.php && sed -i -e "s/CODESPACE_NAME/$CODESPACE_NAME/g"  wp-config.php
 wp core install --url=https://$(CODESPACE_NAME) --title="Wordpress Plugin Template" --admin_user=wordpress --admin_password=wordpress --admin_email=mail@example.com
 
+# Enable Debug Mode
+wp config set WP_DEBUG true --raw
+
 # Manage Plugins
 wp plugin delete akismet
 wp plugin install show-current-template --activate
