@@ -5,7 +5,9 @@ services:
       - '80:80'
     volumes:
       - './wordpress:/var/www/html'
-      - './src:/var/www/html/wp-content/plugins/yourplugin'
+      - './yourplugin.php:/var/www/html/wp-content/plugins/yourplugin/yourplugin.php'
+      - './src:/var/www/html/wp-content/plugins/yourplugin/src'
+      - './vendor:/var/www/html/wp-content/plugins/yourplugin/vendor'
       - './nginx/conf.d/site.conf:/etc/nginx/conf.d/site.conf'
     networks:
       - wordpress
@@ -36,7 +38,9 @@ services:
       - mysql
     volumes:
       - './wordpress:/var/www/html'
-      - './src:/var/www/html/wp-content/plugins/yourplugin'
+      - './yourplugin.php:/var/www/html/wp-content/plugins/yourplugin/yourplugin.php'
+      - './src:/var/www/html/wp-content/plugins/yourplugin/src'
+      - './vendor:/var/www/html/wp-content/plugins/yourplugin/vendor'
       - './php/conf.d/php.ini:/usr/local/etc/php/conf.d/php.ini'
     networks:
       - wordpress
@@ -62,7 +66,9 @@ services:
       - wordpress
     volumes:
       - './wordpress:/var/www/html'
-      - './src:/var/www/html/wp-content/plugins/yourplugin'
+      - './yourplugin.php:/var/www/html/wp-content/plugins/yourplugin/yourplugin.php'
+      - './src:/var/www/html/wp-content/plugins/yourplugin/src'
+      - './vendor:/var/www/html/wp-content/plugins/yourplugin/vendor'
     environment:
       WORDPRESS_DB_HOST: mysql
       WORDPRESS_DB_NAME: wordpress

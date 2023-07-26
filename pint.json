@@ -3,8 +3,10 @@
   "excludes": [
     "docker",
     "nginx",
+    "php",
     "node_modules",
     "src/public",
-    "src/vendor"
+    "vendor",
+    "wordpress"
   ]
 }

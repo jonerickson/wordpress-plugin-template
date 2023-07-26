@@ -28,6 +28,12 @@
     "tailwindcss": "^3.3.3"
   },
   "files": [
-    "src"
+    "yourplugin.php",
+    "src",
+    "vendor",
+    "composer.json",
+    "composer.lock",
+    "package.json",
+    "yarn.lock"
   ]
 }
