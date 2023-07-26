@@ -8,9 +8,9 @@ services:
       - ..:/workspace:cached
     command: sleep infinity
     environment:
-      WORDPRESS_DEBUG: true
-      WP_DEBUG: true
-      WP_DEBUG_DISPLAY: true
+      WORDPRESS_DEBUG: 'true'
+      WP_DEBUG: 'true'
+      WP_DEBUG_DISPLAY: 'true'
   database:
     image: mariadb:10.4
     volumes:
