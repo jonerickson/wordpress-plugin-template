@@ -10,6 +10,10 @@ Launch a new Github Codespace to start creating a Wordpress plugin.
 
 ## Starting A Local Wordpress Docker Development Environment
 
+Download and install the project dependencies.
+
+`yarn install && composer install`
+
 Start and initialize the Docker containers.
 
 `docker-compose up --build`
