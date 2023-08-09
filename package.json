@@ -17,7 +17,8 @@
   },
   "scripts": {
     "dev": "bud development",
-    "build": "bud build"
+    "build": "bud build",
+    "package": "./scripts/package.sh"
   },
   "devDependencies": {
     "@roots/bud": "^6.14.3",

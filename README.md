@@ -42,6 +42,12 @@ Compile your assets for production.
 
 `npm run build`
 
+### Packaging The Plugin
+
+The plugin can be zipped using the following NPM script.
+
+`npm run package`
+
 ### Accessing Wordpress
 
 Nginx is configured to listen to any server name. You can customize a default server name by editing the `nginx/conf.d/site.conf` configuration file.
