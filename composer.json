@@ -1,26 +1,29 @@
 {
-    "require": {
-        "php": "^8.1",
-        "roots/acorn": "^3.2"
-    },
-    "require-dev": {
-        "spatie/laravel-ignition": "^1.6",
-        "laravel/pint": "^v1.10.5",
-        "fzaninotto/faker": "^1.5"
-    },
-    "autoload": {
-        "psr-4": {
-            "WordpressPluginTemplate\\App\\": "src/app",
-            "WordpressPluginTemplate\\Database\\Factories\\": "src/database/factories/",
-            "WordpressPluginTemplate\\Database\\Seeders\\": "src/database/seeders/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "src/tests/"
-        }
-    },
-    "post-autoload-dump": [
-        "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
-    ]
+  "require": {
+    "php": "^8.1",
+    "roots/acorn": "^3.2"
+  },
+  "require-dev": {
+    "spatie/laravel-ignition": "^1.6",
+    "laravel/pint": "^v1.10.5",
+    "fzaninotto/faker": "^1.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "WordpressPluginTemplate\\App\\": "src/app",
+      "WordpressPluginTemplate\\Database\\Factories\\": "src/database/factories/",
+      "WordpressPluginTemplate\\Database\\Seeders\\": "src/database/seeders/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "WordpressPluginTemplate\\Tests\\": "src/tests/"
+    }
+  },
+  "post-autoload-dump": [
+    "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+  ],
+  "scripts": {
+    "lint": "./vendor/bin/pint src"
+  }
 }

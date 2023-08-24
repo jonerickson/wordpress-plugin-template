@@ -1,11 +1,16 @@
 {
   "preset": "laravel",
   "excludes": [
+    "build",
+    "dist",
     "docker",
     "nginx",
-    "php",
     "node_modules",
+    "php",
+    "scripts",
     "src/public",
+    "src/storage",
+    "tools",
     "vendor",
     "wordpress"
   ]

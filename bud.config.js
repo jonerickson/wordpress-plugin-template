@@ -1,6 +1,8 @@
 /** @param {import('@roots/bud').Bud} bud */
-export default async bud => {
-    bud.entry('app', ['resources/js/app.js', 'resources/css/app.css'])
-    bud.setPath('@dist', '@src/public')
-    bud.watch(bud.path(`@src/resources/**/*`));
+export default async (bud) => {
+  bud
+    .entry('app', ['resources/js/app.js', 'resources/css/app.css'])
+    .setPath('@resources', '@src/resources/')
+    .setPath('@dist', '@src/public')
+    .watch(bud.path(`@src/resources/**/*`))
 }

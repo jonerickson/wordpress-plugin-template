@@ -15,5 +15,15 @@
     "vueIndentScriptAndStyle": false,
     "printWidth": 140,
     "tabWidth": 2,
-    "rangeStart": 0
+    "rangeStart": 0,
+    "plugins": ["@shufo/prettier-plugin-blade"],
+    "overrides": [
+        {
+            "files": ["*.blade.php"],
+            "options": {
+                "parser": "blade",
+                "tabWidth": 4
+            }
+        }
+    ]
 }

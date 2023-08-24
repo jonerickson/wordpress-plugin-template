@@ -1,69 +1,87 @@
-# Wordpress Plugin Template (Laravel)
+# WordPress Community Hive Plugin
 
-The following Wordpress plugin template utilizes the [Roots Acorns](https://github.com/roots/acorn) library to provide a Laravel-like framework for developing a Wordpress plugin.
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/DeschutesDesignGroupLLC/wordpress-community-hive)
 
-## Quickstart
+## Launching a Local WordPress Docker Development Environment
 
-Launch a new Github Codespace to start creating a Wordpress plugin.
+Get your project dependencies by executing the following command.
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/DeschutesDesignGroupLLC/wordpress-plugin-template)
-
-## Starting A Local Wordpress Docker Development Environment
-
-Download and install the project dependencies.
-
-`yarn install && composer install`
+```bash
+yarn install && composer install
+```
 
 Start and initialize the Docker containers.
 
-`docker-compose up --build`
+```bash
+docker-compose up --build
+```
 
-### Installing Wordpress
+### WordPress Installation
 
-Run the bash script that will automatically install Wordpress and activate the plugin.
+Execute the provided bash script to automate WordPress installation and plugin activation.
 
-You may configure the WP-CLI script in `docker/cli/install-wordpress` for additional configuration and setup steps.
+For additional configuration and setup, modify the WP-CLI script found in `docker/cli/install-wordpress`.
 
-`docker-compose run --rm cli install-wordpress`
+```bash
+docker-compose run --rm cli install-wordpress
+```
 
 **Admin Details**<br>
 Username: wordpress<br>
 Password: wordpress
 
-### Starting The Development Server
+### Building for Production
 
-Compile and run the Webpack development server. Webpack will utilize hot reloading to show you the latest updates when a file is saved.
+Compile your assets for production with the command:
 
-`npm run dev`
+```bash
+npm run build
+```
 
-### Building For Production
+## Command-Line Interface (CLI)
 
-Compile your assets for production.
-
-`npm run build`
-
-### Packaging The Plugin
-
-The plugin can be zipped using the following NPM script.
-
-`npm run package`
-
-### Accessing Wordpress
-
-Nginx is configured to listen to any server name. You can customize a default server name by editing the `nginx/conf.d/site.conf` configuration file.
-
-The plugin can be accessed at `http://localhost/hello-world`
-
-## CLI
-
-The WP-CLI can be accessed using the following commands:
+Access the WP-CLI with the following commands:
 
 #### WP-CLI
 
-`docker-compose run --rm cli wp [command]`
+```bash
+docker-compose run --rm cli wp [command]
+```
 
 #### Laravel Artisan
 
-Acorns comes with several Laravel Artisan commands. A current list can be found [here](https://roots.io/acorn/docs/wp-cli/).
+The Acorns package includes several Laravel Artisan commands. You can find a current list [here](https://roots.io/acorn/docs/wp-cli/).
 
-`docker-compose run --rm cli wp acorn [artisan:command]`
+```bash
+docker-compose run --rm cli wp acorn [artisan:command]
+```
+
+## Preparing the Plugin for Distribution
+
+WordPress plugins sometimes encounter dependency namespace issues. To tackle this, it's advisable to prefix dependency namespaces with your own.
+
+**Note:** Do not forget to compile your assets for production.
+
+Use PHP-Scoper for this task. Install PHP-Scoper PHAR via Phive:
+
+```bash
+phive install humbug/php-scoper --force-accept-unsigned
+```
+
+Run PHP-Scoper to prefix dependency namespaces and export the plugin files to the `build` folder.
+
+```bash
+composer prefix
+```
+
+Next, dump the Composer autoloader so everything works as expected.
+
+```bash
+composer dump-autoload --working-dir build --classmap-authoritative
+```
+
+Afterward, package the plugin for distribution:
+
+```bash
+npm run package
+```

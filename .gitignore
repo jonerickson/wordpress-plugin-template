@@ -17,6 +17,10 @@ wordpress
 .env
 *.cache
 *.log
+.phive
 
-# Laravel
+# Build
 src/public
+dist
+build
+tools

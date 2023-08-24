@@ -2,8 +2,7 @@
 export default {
   content: ['./src/resources/**/*.{js,jsx,php}'],
   theme: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
+  plugins: []
 }
-

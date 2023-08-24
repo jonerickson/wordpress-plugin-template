@@ -1,16 +1,27 @@
 #!/bin/bash
 
 SOURCE_DIR="src"
-ZIP_FILE="yourplugin.zip"
-DEST_DIR="vendor"
+VENDOR_DIR="vendor"
+PLUGIN_FILE="yourplugin.php"
+ZIP_FILE="build/yourplugin.zip"
 
-# Zip the source directory
-zip -r "$ZIP_FILE" "$SOURCE_DIR"
+# Move source over to build directory
+cp -r $SOURCE_DIR $VENDOR_DIR $PLUGIN_FILE build/
 
-# Zip the vendor directory
-zip -r "$ZIP_FILE" "$DEST_DIR"
+# Change to build directory
+cd build
 
-# Update the existing zip file
-zip -r "$ZIP_FILE" yourplugin.php
+## Remove all files from the storage directories
+rm -rf src/storage/framework/cache/*
+rm -rf src/storage/framework/sessions/*
+rm -rf src/storage/framework/views/*
+
+## Create the zip archive, ignoring any log files
+zip -r $ZIP_FILE * -x '*.log'
+
+# Clean up files
+rm -r $SOURCE_DIR
+rm -r $VENDOR_DIR
+rm -r $PLUGIN_FILE
 
 echo "Package complete."
