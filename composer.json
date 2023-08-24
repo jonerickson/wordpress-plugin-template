@@ -24,6 +24,7 @@
     "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
   ],
   "scripts": {
-    "lint": "./vendor/bin/pint src"
+    "lint": "./vendor/bin/pint src",
+    "prefix": "php -d memory_limit=-1 ./tools/php-scoper add-prefix"
   }
 }
