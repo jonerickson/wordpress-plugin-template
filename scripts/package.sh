@@ -33,13 +33,13 @@ cd build
 # Update the autoloader to PHP-Scoper
 sed -i '' 's/\/autoload.php/\/scoper-autoload.php/g;' $PLUGIN_FILE
 
-## Remove all files from the storage directories
+# Remove all files from the storage directories
 rm -rf src/storage/framework/cache/*
 rm -rf src/storage/framework/sessions/*
 rm -rf src/storage/framework/views/*
 
-## Create the zip archive, ignoring any log files
-zip -r $ZIP_FILE * -x '*.log'
+# Create the zip archive, ignoring any log files or env variables
+zip -r $ZIP_FILE * -x '*.log' '*.env'
 
 # Clean up files
 rm -r $SOURCE_DIR

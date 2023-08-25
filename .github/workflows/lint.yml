@@ -1,0 +1,47 @@
+name: Static Analysis and Linter
+
+on:
+  pull_request:
+
+jobs:
+  lint-application:
+    name: Run Linter and Static Analysis
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
+          ini-values: error_reporting=E_ALL
+          tools: composer
+          coverage: none
+
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: Cache Composer Dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Install Dependencies
+        run: composer install --prefer-dist --no-interaction --no-progress
+
+      - name: Run Linter
+        run: |
+          echo "Running $(./vendor/bin/pint --version)"
+          composer test:lint
+
+      - name: Run Static Analysis
+        run: |
+          echo "Running $(./vendor/bin/phpstan --version)"
+          composer test:types
