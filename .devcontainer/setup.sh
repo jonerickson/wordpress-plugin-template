@@ -54,5 +54,4 @@ wp plugin activate yourplugin
 
 # Setup bash
 echo export PATH=\"\$PATH:$REPO_FOLDER/vendor/bin:$REPO_FOLDER/node_modules/.bin/\" >> ~/.bashrc
-echo "cd $WORDPRESS_FOLDER" >> ~/.bashrc
 source ~/.bashrc
