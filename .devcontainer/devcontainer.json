@@ -2,12 +2,27 @@
   "name": "Wordpress Plugin Template",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/workspace",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "version": "18"
     },
     "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "xdebug.php-pack",
+        "yogensia.searchwpdocs",
+        "valeryanm.vscode-phpsab",
+        "johnbillion.vscode-wordpress-hooks",
+        "ms-azuretools.vscode-docker",
+        "dbaeumer.vscode-eslint",
+        "neilbrayfield.php-docblocker",
+        "shevaua.phpcs",
+        "ms-vscode.makefile-tools"
+      ]
+    }
   },
   "forwardPorts": [
     80,
