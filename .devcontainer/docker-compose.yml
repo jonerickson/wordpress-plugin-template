@@ -6,6 +6,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ..:/workspace:cached
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
     command: sleep infinity
   database:
     image: mariadb:10.4
