@@ -1,6 +1,6 @@
-# WordPress Community Hive Plugin
+# WordPress Plugin Template
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/DeschutesDesignGroupLLC/wordpress-community-hive)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/DeschutesDesignGroupLLC/wordpress-plugin-template)
 
 ## Launching a Local WordPress Docker Development Environment
 
