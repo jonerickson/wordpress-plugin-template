@@ -14,8 +14,4 @@ use WordpressPluginTemplate\App\Http\Controllers\PluginController;
 |
 */
 
-Route::get('hello-world', [PluginController::class, 'index']);
-
-Route::get('model', function () {
-    dd(\WordpressPluginTemplate\App\Models\PluginModel::all());
-});
+Route::get('your-plugin', [PluginController::class, 'index']);

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
+
 use function Roots\env;
 
 return [
@@ -16,7 +17,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Acorn'),
+    'name' => env('APP_NAME', 'Your Plugin'),
 
     /*
     |--------------------------------------------------------------------------
