@@ -4,7 +4,7 @@ on:
   pull_request:
 
 jobs:
-  lint-application:
+  lint-plugin:
     name: Run Linter and Static Analysis
     runs-on: ubuntu-latest
 
@@ -21,6 +21,12 @@ jobs:
           tools: composer
           coverage: none
 
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
       - name: Get Composer Cache Directory
         id: composer-cache
         run: echo "::set-output name=dir::$(composer config cache-files-dir)"
@@ -33,10 +39,20 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-composer-
 
-      - name: Install Dependencies
+      - name: Install PHP Dependencies
         run: composer install --prefer-dist --no-interaction --no-progress
 
-      - name: Run Linter
+      - name: Install Javascript Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run Javascript Linter
+        run: |
+          echo "Running ESLint $(eslint --version)"
+          npm run lint
+          echo "Running Prettier $(prettier --version)"
+          npm run test:format
+
+      - name: Run PHP Linter
         run: |
           echo "Running $(./vendor/bin/pint --version)"
           composer test:lint
