@@ -35,8 +35,9 @@ Config::define('YOUR_PLUGIN_URL', plugin_dir_url(__FILE__));
 Config::apply();
 
 /**
- * Experimental features
+ * Acorn config
  */
+//putenv('APP_RUNNING_IN_CONSOLE=false'); // Uncomment to disable console mode in production. When console mode is enabled, the WP-Cron will not work.
 putenv('ACORN_ENABLE_EXPIRIMENTAL_ROUTER=true');
 
 /**
