@@ -60,14 +60,14 @@ docker-compose run --rm cli wp acorn [artisan:command]
 
 #### Migrations
 
-Migrations can be created just like a blank Laravel application.
+Migrations can be created just like a default Laravel application.
 
 ```bash
 docker-compose run --rm cli wp acorn make:migration create_this_table
 docker-compose run --rm cli wp acorn migrate
 ```
 
-**NOTE**: Running `migrate:fresh` will drop all database tables, including your WordPress core tables.
+**NOTE**: Running `migrate:fresh` will drop all database tables, including your WordPress core tables. You may run the [install](#wordpress-installation) script to reinstall WordPress and recreate all the database tables while maintaining your app's migrations.
 
 #### Seeding
 
@@ -85,9 +85,9 @@ Any environment variable files by default will be excluded from your package. Ma
 
 ## Preparing the Plugin for Distribution
 
-WordPress plugins sometimes encounter dependency namespace issues. To tackle this, it's advisable to prefix dependency namespaces with your own.
+WordPress' plugins sometimes encounter dependency namespace issues. To tackle this, it's advisable to prefix dependency namespaces with your own.
 
-**Note:** Do not forget to compile your assets for production.
+**Note:** Remember to [compile](#building-for-production) your assets for production.
 
 Use PHP-Scoper for this task. Install PHP-Scoper PHAR via Phive:
 
@@ -111,4 +111,18 @@ Afterward, package the plugin for distribution:
 
 ```bash
 npm run package
+```
+
+## Additional Commands
+
+Run the linter. This will lint all files in the `src` directory. The linter uses Laravel Pint. The config can be edited from `pint.json`.
+
+```bash
+composer lint
+```
+
+Run static analysis. This will analyze `yourplugin.php` and everything in `src/app/...` using PHPStan. The config can be edited from `phpstan.neon`.
+
+```bash
+composer test:types
 ```
