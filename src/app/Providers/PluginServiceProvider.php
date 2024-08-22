@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WordpressPluginTemplate\App\Providers;
 
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
@@ -14,8 +17,17 @@ use function Roots\view;
 
 class PluginServiceProvider extends ServiceProvider
 {
+    public static function uninstallRoutine(): void
+    {
+        Schema::drop('yourplugin_migrations');
+    }
+
     public function register(): void
     {
+        Factory::guessFactoryNamesUsing(function ($class) {
+            return 'WordpressPluginTemplate\\Database\\Factories\\'.class_basename($class).'Factory';
+        });
+
         $this->registerShortcode();
         $this->registerHooks();
         $this->buildAdminControlPanel();
@@ -47,11 +59,6 @@ class PluginServiceProvider extends ServiceProvider
     {
         Artisan::call('migrate', ['--force' => true]);
         Log::debug(Artisan::output());
-    }
-
-    public static function uninstallRoutine(): void
-    {
-        Schema::drop('yourplugin_migrations');
     }
 
     public function buildAdminControlPanel(): void

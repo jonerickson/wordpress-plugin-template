@@ -56,6 +56,27 @@ The Acorns package includes several Laravel Artisan commands. You can find a cur
 docker-compose run --rm cli wp acorn [artisan:command]
 ```
 
+## Database
+
+#### Migrations
+
+Migrations can be created just like a default Laravel application.
+
+```bash
+docker-compose run --rm cli wp acorn make:migration create_this_table
+docker-compose run --rm cli wp acorn migrate
+```
+
+**NOTE**: Running `migrate:fresh` will drop all database tables, including your WordPress core tables. You may run the [install](#wordpress-installation) script to reinstall WordPress and recreate all the database tables while maintaining your app's migrations.
+
+#### Seeding
+
+Because the WordPress plugin operates in a different namespace than standard Laravel convention, you will need to pass the seeder class to the `db:seed` command so that the container will resolve the correct class.
+
+```bash
+docker-compose run --rm cli wp acorn db:seed --class=WordpressPluginTemplate\\Database\\Seeders\\DatabaseSeeder
+```
+
 ## Environment Variables
 
 You can load and set environment variables using a `.env` file located in the `src` directory. Rename `.env.example` to `.env` to get started. The file will be automatically loaded by the application.
@@ -64,9 +85,9 @@ Any environment variable files by default will be excluded from your package. Ma
 
 ## Preparing the Plugin for Distribution
 
-WordPress plugins sometimes encounter dependency namespace issues. To tackle this, it's advisable to prefix dependency namespaces with your own.
+WordPress' plugins sometimes encounter dependency namespace issues. To tackle this, it's advisable to prefix dependency namespaces with your own.
 
-**Note:** Do not forget to compile your assets for production.
+**Note:** Remember to [compile](#building-for-production) your assets for production.
 
 Use PHP-Scoper for this task. Install PHP-Scoper PHAR via Phive:
 
@@ -90,4 +111,25 @@ Afterward, package the plugin for distribution:
 
 ```bash
 npm run package
+```
+
+## Additional Commands
+
+Run the PHP linter. This will lint all files in the `src` directory. The linter uses Laravel Pint. The config can be edited from `pint.json`.
+
+```bash
+composer lint
+```
+
+Run static analysis. This will analyze `yourplugin.php` and everything in `src/app/...` using PHPStan. The config can be edited from `phpstan.neon`.
+
+```bash
+composer test:types
+```
+
+Run the JS linter and format the code. The linter uses ESLint and the config can be edited from `.eslintrc.cjs`. The code formatter uses Prettier and the config can be edited from `.prettierrc
+`.
+```bash
+npm run lint
+npm run format
 ```

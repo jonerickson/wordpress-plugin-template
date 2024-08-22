@@ -1,6 +1,8 @@
 <?php
 
-namespace Tests;
+declare(strict_types=1);
+
+namespace WordpressPluginTemplate\Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Illuminate\Foundation\Testing\WithFaker;

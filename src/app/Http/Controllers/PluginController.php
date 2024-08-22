@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WordpressPluginTemplate\App\Http\Controllers;
 
 use Illuminate\Routing\Controller;

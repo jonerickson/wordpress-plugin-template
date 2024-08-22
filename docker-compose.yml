@@ -18,7 +18,6 @@ services:
       - wordpress
   mysql:
     image: mysql:8
-    command: '--default-authentication-plugin=mysql_native_password'
     volumes:
       - mysql:/var/lib/mysql
     networks:
@@ -34,7 +33,7 @@ services:
     ports:
       - '3306:3306'
   wordpress:
-    image: wordpress-laravel:php8.1-fpm
+    image: wordpress-laravel:php8.3-fpm
     build:
       context: ./docker/wordpress
       dockerfile: Dockerfile
@@ -58,7 +57,7 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DEBUG: true
   cli:
-    image: wordpress-laravel:cli-php8.1
+    image: wordpress-laravel:cli-php8.3
     build:
       context: ./docker/cli
       dockerfile: Dockerfile
