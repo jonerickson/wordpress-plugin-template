@@ -1,4 +1,4 @@
-name: Static Analysis and Linter
+name: Code Style
 
 on:
   pull_request:

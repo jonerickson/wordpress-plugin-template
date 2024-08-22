@@ -115,7 +115,7 @@ npm run package
 
 ## Additional Commands
 
-Run the linter. This will lint all files in the `src` directory. The linter uses Laravel Pint. The config can be edited from `pint.json`.
+Run the PHP linter. This will lint all files in the `src` directory. The linter uses Laravel Pint. The config can be edited from `pint.json`.
 
 ```bash
 composer lint
@@ -125,4 +125,11 @@ Run static analysis. This will analyze `yourplugin.php` and everything in `src/a
 
 ```bash
 composer test:types
+```
+
+Run the JS linter and format the code. The linter uses ESLint and the config can be edited from `.eslintrc.cjs`. The code formatter uses Prettier and the config can be edited from `.prettierrc
+`.
+```bash
+npm run lint
+npm run format
 ```
