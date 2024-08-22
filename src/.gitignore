@@ -1,0 +1,15 @@
+# Dependencies
+vendor
+vendor-bin
+node_modules
+tools
+
+# Other
+.env
+*.cache
+*.log
+
+# Build
+public
+dist
+build

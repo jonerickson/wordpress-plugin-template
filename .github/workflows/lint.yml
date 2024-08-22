@@ -7,6 +7,9 @@ jobs:
   lint-plugin:
     name: Run Linter and Static Analysis
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./src
 
     steps:
       - name: Checkout Source Code

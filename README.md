@@ -2,7 +2,15 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/DeschutesDesignGroupLLC/wordpress-plugin-template)
 
-## Launching a Local WordPress Docker Development Environment
+## Getting Started
+
+**Note**: All commands in this README are expected to be called from the `src` directory.
+
+```bash
+cd src
+```
+
+### Launching a Local WordPress Docker Development Environment
 
 Get your project dependencies by executing the following command.
 
@@ -77,6 +85,14 @@ Because the WordPress plugin operates in a different namespace than standard Lar
 docker-compose run --rm cli wp acorn db:seed --class=WordpressPluginTemplate\\Database\\Seeders\\DatabaseSeeder
 ```
 
+## Routes
+
+Routes can be created in the routes folder just like a default Laravel application
+
+```bash
+docker-compose run --rm cli wp acorn route:list
+```
+
 ## Environment Variables
 
 You can load and set environment variables using a `.env` file located in the `src` directory. Rename `.env.example` to `.env` to get started. The file will be automatically loaded by the application.
@@ -84,6 +100,12 @@ You can load and set environment variables using a `.env` file located in the `s
 Any environment variable files by default will be excluded from your package. Make sure to set default values or modify `scripts/package.sh` to include `*.env` files when packaging.
 
 ## Preparing the Plugin for Distribution
+
+Remove dev dependencies.
+
+```bash
+composer install --no-dev
+```
 
 WordPress' plugins sometimes encounter dependency namespace issues. To tackle this, it's advisable to prefix dependency namespaces with your own.
 
