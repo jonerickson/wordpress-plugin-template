@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c045706741b3ae8461bfb7435a579c8f",
+    "content-hash": "ca34751d9b6c63f742746c24ca8851e9",
     "packages": [
         {
             "name": "brick/math",
@@ -3736,6 +3736,53 @@
             "time": "2018-08-10T14:18:38+00:00"
         },
         {
+            "name": "sniccowp/php-scoper-wordpress-excludes",
+            "version": "6.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/snicco/php-scoper-wordpress-excludes.git",
+                "reference": "254c0e1107c1259c59da0250047f55e77af5b0d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/snicco/php-scoper-wordpress-excludes/zipball/254c0e1107c1259c59da0250047f55e77af5b0d9",
+                "reference": "254c0e1107c1259c59da0250047f55e77af5b0d9",
+                "shasum": ""
+            },
+            "require-dev": {
+                "php": "^7.4",
+                "php-stubs/wordpress-globals": "0.2.0",
+                "php-stubs/wordpress-stubs": "6.5.3",
+                "sniccowp/php-scoper-excludes": "dev-master"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Calvin Alkan",
+                    "email": "calvin@snicco.de"
+                },
+                {
+                    "name": "Marlon Alkan",
+                    "email": "marlon@snicco.de"
+                }
+            ],
+            "description": "A list of all WordPress core classes, functions and constants. Meant to be used with the PHP-Scoper exclusion functionality.",
+            "keywords": [
+                "php-scoper",
+                "scoping WordPress",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/snicco/php-scoper-wordpress-excludes/issues",
+                "source": "https://github.com/snicco/php-scoper-wordpress-excludes/tree/6.5.3"
+            },
+            "time": "2024-05-09T00:02:32+00:00"
+        },
+        {
             "name": "symfony/console",
             "version": "v6.4.10",
             "source": {
@@ -5888,158 +5935,6 @@
             "time": "2022-10-31T08:38:03+00:00"
         },
         {
-            "name": "fidry/console",
-            "version": "0.6.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/theofidry/console.git",
-                "reference": "a681ea3aa7f5c0c78cd437250f64b13d2818c95d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/theofidry/console/zipball/a681ea3aa7f5c0c78cd437250f64b13d2818c95d",
-                "reference": "a681ea3aa7f5c0c78cd437250f64b13d2818c95d",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.2",
-                "psr/log": "^3.0",
-                "symfony/console": "^6.4 || ^7.0",
-                "symfony/deprecation-contracts": "^3.4",
-                "symfony/event-dispatcher-contracts": "^2.5 || ^3.0",
-                "symfony/service-contracts": "^2.5 || ^3.0",
-                "thecodingmachine/safe": "^2.0",
-                "webmozart/assert": "^1.11"
-            },
-            "conflict": {
-                "symfony/dependency-injection": "<6.4.0",
-                "symfony/framework-bundle": "<6.4.0",
-                "symfony/http-kernel": "<6.4.0"
-            },
-            "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.8.2",
-                "composer/semver": "^3.3.2",
-                "ergebnis/composer-normalize": "^2.33",
-                "fidry/makefile": "^0.2.1 || ^1.0.0",
-                "infection/infection": "^0.28",
-                "phpunit/phpunit": "^10.2",
-                "symfony/dependency-injection": "^6.4",
-                "symfony/flex": "^2.4.0",
-                "symfony/framework-bundle": "^6.4",
-                "symfony/http-kernel": "^6.4",
-                "symfony/yaml": "^6.4 || ^7.0"
-            },
-            "type": "library",
-            "extra": {
-                "bamarni-bin": {
-                    "bin-links": false,
-                    "forward-command": false
-                },
-                "branch-alias": {
-                    "dev-main": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Fidry\\Console\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Théo Fidry",
-                    "email": "theo.fidry@gmail.com"
-                }
-            ],
-            "description": "Library to create CLI applications",
-            "keywords": [
-                "cli",
-                "console",
-                "symfony"
-            ],
-            "support": {
-                "issues": "https://github.com/theofidry/console/issues",
-                "source": "https://github.com/theofidry/console/tree/0.6.10"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/theofidry",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-04-23T08:36:33+00:00"
-        },
-        {
-            "name": "fidry/filesystem",
-            "version": "1.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/theofidry/filesystem.git",
-                "reference": "8303225d289da1c434f6009743fbe9aad852de0c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/theofidry/filesystem/zipball/8303225d289da1c434f6009743fbe9aad852de0c",
-                "reference": "8303225d289da1c434f6009743fbe9aad852de0c",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.1",
-                "symfony/filesystem": "^6.4 || ^7.0",
-                "thecodingmachine/safe": "^2.0"
-            },
-            "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.4",
-                "ergebnis/composer-normalize": "^2.28",
-                "infection/infection": ">=0.26",
-                "phpunit/phpunit": "^10.3",
-                "symfony/finder": "^6.4 || ^7.0"
-            },
-            "type": "library",
-            "extra": {
-                "bamarni-bin": {
-                    "bin-links": false,
-                    "forward-command": false
-                },
-                "branch-alias": {
-                    "dev-main": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Fidry\\FileSystem\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Théo Fidry",
-                    "email": "theo.fidry@gmail.com"
-                }
-            ],
-            "description": "Symfony Filesystem with a few more utilities.",
-            "keywords": [
-                "filesystem"
-            ],
-            "support": {
-                "issues": "https://github.com/theofidry/filesystem/issues",
-                "source": "https://github.com/theofidry/filesystem/tree/1.2.1"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/theofidry",
-                    "type": "github"
-                }
-            ],
-            "time": "2023-12-10T13:29:09+00:00"
-        },
-        {
             "name": "fzaninotto/faker",
             "version": "v1.5.0",
             "source": {
@@ -6095,136 +5990,6 @@
             },
             "abandoned": true,
             "time": "2015-05-29T06:29:14+00:00"
-        },
-        {
-            "name": "humbug/php-scoper",
-            "version": "0.18.13",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/humbug/php-scoper.git",
-                "reference": "3224161293e4a68bbd96d8824d10894e4e742e09"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/humbug/php-scoper/zipball/3224161293e4a68bbd96d8824d10894e4e742e09",
-                "reference": "3224161293e4a68bbd96d8824d10894e4e742e09",
-                "shasum": ""
-            },
-            "require": {
-                "fidry/console": "^0.6.10",
-                "fidry/filesystem": "^1.1",
-                "jetbrains/phpstorm-stubs": "^2024.1",
-                "nikic/php-parser": "^5.0",
-                "php": "^8.2",
-                "symfony/console": "^6.4 || ^7.0",
-                "symfony/filesystem": "^6.4 || ^7.0",
-                "symfony/finder": "^6.4 || ^7.0",
-                "thecodingmachine/safe": "^2.0"
-            },
-            "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.1",
-                "ergebnis/composer-normalize": "^2.28",
-                "fidry/makefile": "^1.0",
-                "humbug/box": "^4.6.2",
-                "phpspec/prophecy-phpunit": "^2.0",
-                "phpunit/phpunit": "^10.0",
-                "symfony/yaml": "^6.4 || ^7.0"
-            },
-            "bin": [
-                "bin/php-scoper"
-            ],
-            "type": "library",
-            "extra": {
-                "bamarni-bin": {
-                    "bin-links": false,
-                    "forward-command": false
-                },
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/functions.php"
-                ],
-                "psr-4": {
-                    "Humbug\\PhpScoper\\": "src/"
-                },
-                "classmap": [
-                    "vendor-hotfix/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bernhard Schussek",
-                    "email": "bschussek@gmail.com"
-                },
-                {
-                    "name": "Théo Fidry",
-                    "email": "theo.fidry@gmail.com"
-                },
-                {
-                    "name": "Pádraic Brady",
-                    "email": "padraic.brady@gmail.com"
-                }
-            ],
-            "description": "Prefixes all PHP namespaces in a file or directory.",
-            "support": {
-                "issues": "https://github.com/humbug/php-scoper/issues",
-                "source": "https://github.com/humbug/php-scoper/tree/0.18.13"
-            },
-            "time": "2024-06-11T07:33:53+00:00"
-        },
-        {
-            "name": "jetbrains/phpstorm-stubs",
-            "version": "v2024.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/JetBrains/phpstorm-stubs.git",
-                "reference": "78d64a0d0c338fdb07eb53c72f91a86a3b2819c6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/78d64a0d0c338fdb07eb53c72f91a86a3b2819c6",
-                "reference": "78d64a0d0c338fdb07eb53c72f91a86a3b2819c6",
-                "shasum": ""
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "v3.46.0",
-                "nikic/php-parser": "v5.0.0",
-                "phpdocumentor/reflection-docblock": "5.3.0",
-                "phpunit/phpunit": "10.5.5"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "PhpStormStubsMap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "description": "PHP runtime & extensions header files for PhpStorm",
-            "homepage": "https://www.jetbrains.com/phpstorm",
-            "keywords": [
-                "autocomplete",
-                "code",
-                "inference",
-                "inspection",
-                "jetbrains",
-                "phpstorm",
-                "stubs",
-                "type"
-            ],
-            "support": {
-                "source": "https://github.com/JetBrains/phpstorm-stubs/tree/v2024.1"
-            },
-            "time": "2024-03-07T11:03:05+00:00"
         },
         {
             "name": "laravel/pint",
@@ -6291,64 +6056,6 @@
                 "source": "https://github.com/laravel/pint"
             },
             "time": "2024-08-06T15:11:54+00:00"
-        },
-        {
-            "name": "nikic/php-parser",
-            "version": "v5.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "683130c2ff8c2739f4822ff7ac5c873ec529abd1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/683130c2ff8c2739f4822ff7ac5c873ec529abd1",
-                "reference": "683130c2ff8c2739f4822ff7ac5c873ec529abd1",
-                "shasum": ""
-            },
-            "require": {
-                "ext-ctype": "*",
-                "ext-json": "*",
-                "ext-tokenizer": "*",
-                "php": ">=7.4"
-            },
-            "require-dev": {
-                "ircmaxell/php-yacc": "^0.0.7",
-                "phpunit/phpunit": "^9.0"
-            },
-            "bin": [
-                "bin/php-parse"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PhpParser\\": "lib/PhpParser"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Nikita Popov"
-                }
-            ],
-            "description": "A PHP parser written in PHP",
-            "keywords": [
-                "parser",
-                "php"
-            ],
-            "support": {
-                "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v5.1.0"
-            },
-            "time": "2024-07-01T20:03:41+00:00"
         },
         {
             "name": "php-stubs/wordpress-stubs",
@@ -6455,53 +6162,6 @@
                 }
             ],
             "time": "2024-08-19T14:37:29+00:00"
-        },
-        {
-            "name": "sniccowp/php-scoper-wordpress-excludes",
-            "version": "6.5.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/snicco/php-scoper-wordpress-excludes.git",
-                "reference": "254c0e1107c1259c59da0250047f55e77af5b0d9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/snicco/php-scoper-wordpress-excludes/zipball/254c0e1107c1259c59da0250047f55e77af5b0d9",
-                "reference": "254c0e1107c1259c59da0250047f55e77af5b0d9",
-                "shasum": ""
-            },
-            "require-dev": {
-                "php": "^7.4",
-                "php-stubs/wordpress-globals": "0.2.0",
-                "php-stubs/wordpress-stubs": "6.5.3",
-                "sniccowp/php-scoper-excludes": "dev-master"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Calvin Alkan",
-                    "email": "calvin@snicco.de"
-                },
-                {
-                    "name": "Marlon Alkan",
-                    "email": "marlon@snicco.de"
-                }
-            ],
-            "description": "A list of all WordPress core classes, functions and constants. Meant to be used with the PHP-Scoper exclusion functionality.",
-            "keywords": [
-                "php-scoper",
-                "scoping WordPress",
-                "wordpress"
-            ],
-            "support": {
-                "issues": "https://github.com/snicco/php-scoper-wordpress-excludes/issues",
-                "source": "https://github.com/snicco/php-scoper-wordpress-excludes/tree/6.5.3"
-            },
-            "time": "2024-05-09T00:02:32+00:00"
         },
         {
             "name": "spatie/backtrace",
@@ -6884,72 +6544,6 @@
             "time": "2024-06-12T15:01:18+00:00"
         },
         {
-            "name": "symfony/filesystem",
-            "version": "v7.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/filesystem.git",
-                "reference": "92a91985250c251de9b947a14bb2c9390b1a562c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/92a91985250c251de9b947a14bb2c9390b1a562c",
-                "reference": "92a91985250c251de9b947a14bb2c9390b1a562c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.2",
-                "symfony/polyfill-ctype": "~1.8",
-                "symfony/polyfill-mbstring": "~1.8"
-            },
-            "require-dev": {
-                "symfony/process": "^6.4|^7.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Filesystem\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Provides basic utilities for the filesystem",
-            "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/filesystem/tree/v7.1.2"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2024-06-28T10:03:55+00:00"
-        },
-        {
             "name": "symfony/polyfill-php73",
             "version": "v1.30.0",
             "source": {
@@ -7087,203 +6681,6 @@
                 "source": "https://github.com/szepeviktor/phpstan-wordpress/tree/v1.3.5"
             },
             "time": "2024-06-28T22:27:19+00:00"
-        },
-        {
-            "name": "thecodingmachine/safe",
-            "version": "v2.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thecodingmachine/safe.git",
-                "reference": "3115ecd6b4391662b4931daac4eba6b07a2ac1f0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thecodingmachine/safe/zipball/3115ecd6b4391662b4931daac4eba6b07a2ac1f0",
-                "reference": "3115ecd6b4391662b4931daac4eba6b07a2ac1f0",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "^1.5",
-                "phpunit/phpunit": "^9.5",
-                "squizlabs/php_codesniffer": "^3.2",
-                "thecodingmachine/phpstan-strict-rules": "^1.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2.x-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "deprecated/apc.php",
-                    "deprecated/array.php",
-                    "deprecated/datetime.php",
-                    "deprecated/libevent.php",
-                    "deprecated/misc.php",
-                    "deprecated/password.php",
-                    "deprecated/mssql.php",
-                    "deprecated/stats.php",
-                    "deprecated/strings.php",
-                    "lib/special_cases.php",
-                    "deprecated/mysqli.php",
-                    "generated/apache.php",
-                    "generated/apcu.php",
-                    "generated/array.php",
-                    "generated/bzip2.php",
-                    "generated/calendar.php",
-                    "generated/classobj.php",
-                    "generated/com.php",
-                    "generated/cubrid.php",
-                    "generated/curl.php",
-                    "generated/datetime.php",
-                    "generated/dir.php",
-                    "generated/eio.php",
-                    "generated/errorfunc.php",
-                    "generated/exec.php",
-                    "generated/fileinfo.php",
-                    "generated/filesystem.php",
-                    "generated/filter.php",
-                    "generated/fpm.php",
-                    "generated/ftp.php",
-                    "generated/funchand.php",
-                    "generated/gettext.php",
-                    "generated/gmp.php",
-                    "generated/gnupg.php",
-                    "generated/hash.php",
-                    "generated/ibase.php",
-                    "generated/ibmDb2.php",
-                    "generated/iconv.php",
-                    "generated/image.php",
-                    "generated/imap.php",
-                    "generated/info.php",
-                    "generated/inotify.php",
-                    "generated/json.php",
-                    "generated/ldap.php",
-                    "generated/libxml.php",
-                    "generated/lzf.php",
-                    "generated/mailparse.php",
-                    "generated/mbstring.php",
-                    "generated/misc.php",
-                    "generated/mysql.php",
-                    "generated/network.php",
-                    "generated/oci8.php",
-                    "generated/opcache.php",
-                    "generated/openssl.php",
-                    "generated/outcontrol.php",
-                    "generated/pcntl.php",
-                    "generated/pcre.php",
-                    "generated/pgsql.php",
-                    "generated/posix.php",
-                    "generated/ps.php",
-                    "generated/pspell.php",
-                    "generated/readline.php",
-                    "generated/rpminfo.php",
-                    "generated/rrd.php",
-                    "generated/sem.php",
-                    "generated/session.php",
-                    "generated/shmop.php",
-                    "generated/sockets.php",
-                    "generated/sodium.php",
-                    "generated/solr.php",
-                    "generated/spl.php",
-                    "generated/sqlsrv.php",
-                    "generated/ssdeep.php",
-                    "generated/ssh2.php",
-                    "generated/stream.php",
-                    "generated/strings.php",
-                    "generated/swoole.php",
-                    "generated/uodbc.php",
-                    "generated/uopz.php",
-                    "generated/url.php",
-                    "generated/var.php",
-                    "generated/xdiff.php",
-                    "generated/xml.php",
-                    "generated/xmlrpc.php",
-                    "generated/yaml.php",
-                    "generated/yaz.php",
-                    "generated/zip.php",
-                    "generated/zlib.php"
-                ],
-                "classmap": [
-                    "lib/DateTime.php",
-                    "lib/DateTimeImmutable.php",
-                    "lib/Exceptions/",
-                    "deprecated/Exceptions/",
-                    "generated/Exceptions/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "PHP core functions that throw exceptions instead of returning FALSE on error",
-            "support": {
-                "issues": "https://github.com/thecodingmachine/safe/issues",
-                "source": "https://github.com/thecodingmachine/safe/tree/v2.5.0"
-            },
-            "time": "2023-04-05T11:54:14+00:00"
-        },
-        {
-            "name": "webmozart/assert",
-            "version": "1.11.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webmozarts/assert.git",
-                "reference": "11cb2199493b2f8a3b53e7f19068fc6aac760991"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webmozarts/assert/zipball/11cb2199493b2f8a3b53e7f19068fc6aac760991",
-                "reference": "11cb2199493b2f8a3b53e7f19068fc6aac760991",
-                "shasum": ""
-            },
-            "require": {
-                "ext-ctype": "*",
-                "php": "^7.2 || ^8.0"
-            },
-            "conflict": {
-                "phpstan/phpstan": "<0.12.20",
-                "vimeo/psalm": "<4.6.1 || 4.6.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^8.5.13"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.10-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Webmozart\\Assert\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bernhard Schussek",
-                    "email": "bschussek@gmail.com"
-                }
-            ],
-            "description": "Assertions to validate method input/output with nice error messages.",
-            "keywords": [
-                "assert",
-                "check",
-                "validate"
-            ],
-            "support": {
-                "issues": "https://github.com/webmozarts/assert/issues",
-                "source": "https://github.com/webmozarts/assert/tree/1.11.0"
-            },
-            "time": "2022-06-03T18:03:27+00:00"
         }
     ],
     "aliases": [],
@@ -7292,7 +6689,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.1"
+        "php": "^8.2"
     },
     "platform-dev": [],
     "plugin-api-version": "2.6.0"

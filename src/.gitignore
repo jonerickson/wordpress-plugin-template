@@ -2,6 +2,7 @@
 vendor
 vendor-bin
 node_modules
+tools
 
 # Other
 .env

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Symfony\Component\Finder\Finder;
+use Isolated\Symfony\Component\Finder\Finder;
 
 function getWpExcludedSymbols(string $fileName): array
 {
@@ -36,7 +36,7 @@ return [
             ->exclude([
                 'node_modules',
                 'tests',
-                'vendor-bin',
+				'tools',
             ])
             ->in('.'),
         Finder::create()
@@ -77,7 +77,6 @@ return [
                 $contents,
             );
         },
-        (require __DIR__.'/vendor/humbug/php-scoper/res/create-symfony-php-services-patcher.php')('config/services.php'),
     ],
     'exclude-namespaces' => [
         'WordpressPluginTemplate\App',

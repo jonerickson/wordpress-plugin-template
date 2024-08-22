@@ -34,14 +34,12 @@ rm demo-content.xml
 mkdir -p "$WORDPRESS_FOLDER/wp-content/plugins/yourplugin"
 cd $WORDPRESS_FOLDER/wp-content/plugins/yourplugin
 ln -s $REPO_FOLDER/src
-ln -s $REPO_FOLDER/vendor
-ln -s $REPO_FOLDER/yourplugin.php
 
 # Xdebug
 echo xdebug.log_level=0 | sudo tee -a /usr/local/etc/php/conf.d/xdebug.ini
 
 # Install dependencies
-cd $REPO_FOLDER
+cd $REPO_FOLDER/src
 yarn install
 composer install
 

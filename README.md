@@ -101,9 +101,21 @@ Any environment variable files by default will be excluded from your package. Ma
 
 ## Preparing the Plugin for Distribution
 
-WordPress' plugins sometimes encounter dependency namespace issues. To tackle this, it's advisable to prefix dependency namespaces with your own. This documentation uses PHP-Scope for dependency namespace management.
+Remove dev dependencies.
+
+```bash
+composer install --no-dev
+```
+
+WordPress' plugins sometimes encounter dependency namespace issues. To tackle this, it's advisable to prefix dependency namespaces with your own.
 
 **Note:** Remember to [compile](#building-for-production) your assets for production.
+
+Use PHP-Scoper for this task. Install PHP-Scoper PHAR via Phive:
+
+```bash
+phive install humbug/php-scoper --force-accept-unsigned
+```
 
 Run PHP-Scoper to prefix dependency namespaces and export the plugin files to the `build` folder.
 
