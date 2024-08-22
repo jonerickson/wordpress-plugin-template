@@ -1,50 +1,33 @@
 #!/bin/bash
 
-SOURCE_DIR="src"
-VENDOR_DIR="vendor"
+SOURCE_DIR="./build"
 PLUGIN_FILE="yourplugin.php"
 ZIP_FILE="yourplugin.zip"
+DEST_DIR="../../build"
 
-# Delete existing build
-if [ -f "./build/$ZIP_FILE" ]; then
-  rm -r ./build/$ZIP_FILE
+# Delete existing zip file in the build directory
+if [ -f "$DEST_DIR/$ZIP_FILE" ]; then
+  rm -r "$DEST_DIR/$ZIP_FILE"
 fi
 
-# Move source over to build directory
-if [ ! -f "./build/$PLUGIN_FILE" ]; then
-  cp -r $PLUGIN_FILE build/
-fi
-
-if [ ! -d "./build/$SOURCE_DIR" ]; then
-  cp -r $SOURCE_DIR build/
-fi
-
-if [ ! -d "./build/$VENDOR_DIR" ]; then
-  cp -r $VENDOR_DIR build/
-fi
-
-if [ ! -f "./build/composer.json" ]; then
-  cp -r composer.json build/
-fi
-
-# Change to build directory
-cd build
+# Change to the source directory
+cd "$SOURCE_DIR" || exit
 
 # Update the autoloader to PHP-Scoper
 sed -i '' 's/\/autoload.php/\/scoper-autoload.php/g;' $PLUGIN_FILE
 
 # Remove all files from the storage directories
-rm -rf src/storage/framework/cache/*
-rm -rf src/storage/framework/sessions/*
-rm -rf src/storage/framework/views/*
+rm -rf storage/framework/cache/*
+rm -rf storage/framework/sessions/*
+rm -rf storage/framework/views/*
 
 # Create the zip archive, ignoring any log files or env variables
 zip -r $ZIP_FILE * -x '*.log' '*.env'
 
-# Clean up files
-rm -r $SOURCE_DIR
-rm -r $VENDOR_DIR
-rm -r $PLUGIN_FILE
-rm -r composer.json
+# Move the zip archive to the destination directory
+mv "$ZIP_FILE" "$DEST_DIR/"
+
+# Remove the build directory
+cd .. && rm -rf build
 
 echo "Package complete."

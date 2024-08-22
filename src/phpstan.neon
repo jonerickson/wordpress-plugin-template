@@ -5,6 +5,6 @@ parameters:
         - bootstrap.php
     paths:
         - yourplugin.php
-        - src/app/
+        - app/
     level: 6
 

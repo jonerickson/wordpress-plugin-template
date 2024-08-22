@@ -16,4 +16,4 @@ use WordpressPluginTemplate\App\Http\Controllers\PluginController;
 |
 */
 
-Route::get('your-plugin', [PluginController::class, 'index']);
+Route::get('/your-plugin', [PluginController::class, 'index']);

@@ -18,10 +18,10 @@
   "scripts": {
     "dev": "bud dev",
     "build": "bud build",
-    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint --fix 'src/resources/**/*.js' './*.js'",
-    "format": "prettier 'src/resources/**/*.{blade.php,js,json}' './*.{js,json}' --write --config ./.prettierrc",
-    "test:format": "prettier 'src/resources/**/*.{blade.php,js,json}' './*.{js,json}' --check --config ./.prettierrc",
-    "package": "./scripts/package.sh"
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint --fix 'resources/**/*.js' './*.js'",
+    "format": "prettier 'resources/**/*.{blade.php,js,json}' './*.{js,json}' --write --config ./.prettierrc",
+    "test:format": "prettier 'resources/**/*.{blade.php,js,json}' './*.{js,json}' --check --config ./.prettierrc",
+    "package": "../scripts/package.sh"
   },
   "devDependencies": {
     "@roots/bud": "^6.14.3",

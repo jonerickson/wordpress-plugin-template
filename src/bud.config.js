@@ -2,7 +2,7 @@
 export default async (bud) => {
   bud
     .entry('app', ['resources/js/app.js', 'resources/css/app.css'])
-    .setPath('@resources', '@src/resources/')
-    .setPath('@dist', '@src/public')
-    .watch(bud.path(`@src/resources/**/*`))
+    .setPath('@resources', 'resources')
+    .setPath('@dist', 'public')
+    .watch(bud.path(`@resources/**/*`))
 }

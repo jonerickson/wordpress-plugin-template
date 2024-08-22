@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Facade;
-
 use Roots\Acorn\ServiceProvider;
+
 use function Roots\env;
 
 return [
@@ -159,7 +159,7 @@ return [
 
     'providers' => ServiceProvider::defaultProviders()->merge([
         WordpressPluginTemplate\App\Providers\PluginServiceProvider::class,
-    ]),
+    ])->toArray(),
 
     /*
     |--------------------------------------------------------------------------

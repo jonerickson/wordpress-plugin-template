@@ -5,21 +5,13 @@ out
 gen
 _config.yml
 
-# Dependencies
-vendor
-node_modules
-
 # Builds
 *.zip
+wordpress
 
 # Other
+cache
 .env
 *.cache
 *.log
 .phive
-
-# Build
-src/public
-dist
-build
-tools
