@@ -1,6 +1,8 @@
 <?php
 
-namespace WordpressPluginTemplate\Database\seeders;
+declare(strict_types=1);
+
+namespace WordpressPluginTemplate\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use WordpressPluginTemplate\App\Models\PluginModel;

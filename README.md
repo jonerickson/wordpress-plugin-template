@@ -56,6 +56,25 @@ The Acorns package includes several Laravel Artisan commands. You can find a cur
 docker-compose run --rm cli wp acorn [artisan:command]
 ```
 
+## Database
+
+#### Migrations
+
+Migrations can be created just like a blank Laravel application.
+
+```bash
+docker-compose run --rm cli wp acorn make:migration create_this_table
+docker-compose run --rm cli wp acorn migrate
+```
+
+#### Seeding
+
+Because the WordPress plugin operates in a different namespace than standard Laravel convention, you will need to pass the seeder class to the `db:seed` command so that the container will resolve the correct class.
+
+```bash
+docker-compose run --rm cli wp acorn db:seed --class=WordpressPluginTemplate\\Database\\Seeders\\DatabaseSeeder
+```
+
 ## Environment Variables
 
 You can load and set environment variables using a `.env` file located in the `src` directory. Rename `.env.example` to `.env` to get started. The file will be automatically loaded by the application.
