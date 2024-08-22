@@ -11,5 +11,5 @@ class PluginModel extends Model
 {
     use HasFactory;
 
-    protected $table = 'your_plugin_model';
+    protected $table = 'yourplugin_entries';
 }

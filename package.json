@@ -16,7 +16,7 @@
     "url": "https://www.deschutesdesigngroup.com"
   },
   "scripts": {
-    "dev": "bud development",
+    "dev": "bud dev",
     "build": "bud build",
     "lint": "ESLINT_USE_FLAT_CONFIG=false eslint --fix 'src/resources/**/*.js' './*.js'",
     "format": "prettier 'src/resources/**/*.{blade.php,js,json}' './*.{js,json}' --write --config ./.prettierrc",

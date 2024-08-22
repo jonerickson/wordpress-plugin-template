@@ -15,7 +15,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('your_plugin_model', function (Blueprint $table) {
+        Schema::create('yourplugin_entries', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('your_plugin_model');
+        Schema::dropIfExists('yourplugin_entries');
     }
 };

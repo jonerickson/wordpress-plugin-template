@@ -67,6 +67,8 @@ docker-compose run --rm cli wp acorn make:migration create_this_table
 docker-compose run --rm cli wp acorn migrate
 ```
 
+**NOTE**: Running `migrate:fresh` will drop all database tables, including your WordPress core tables.
+
 #### Seeding
 
 Because the WordPress plugin operates in a different namespace than standard Laravel convention, you will need to pass the seeder class to the `db:seed` command so that the container will resolve the correct class.
